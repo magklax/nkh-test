@@ -1,0 +1,172 @@
+$color-rob-roy: #e9c46a;
+$color-jungle-green: #2a9d8f;
+$color-white: #ffffff;
+$color-sandy-brown: #f4a261;
+$color-burnt-siena: #e76f51;
+$color-blue-diane: #264653;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 0 3.3%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
+
+h2.title {
+  margin-bottom: 15px;
+  font-size: 36px;
+}
+
+.item {
+  padding: 10px;
+  border: 5px solid;
+  font-size: 24px;
+}
+
+.flex {
+  color: $color-jungle-green;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &__item {
+    flex-basis: 25%;
+    display: flex;
+    background-color: $color-sandy-brown;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &:nth-child(3) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.inline-block {
+  color: $color-burnt-siena;
+  font-size: 0;
+
+  &__item {
+    display: inline-block;
+    width: 25%;
+    height: 50%;
+    background-color: $color-blue-diane;
+  }
+}
+
+.float {
+  color: $color-blue-diane;
+
+  &__item {
+    float: left;
+    width: 25%;
+    height: 50%;
+    background-color: $color-rob-roy;
+  }
+}
+
+.table {
+  color: $color-rob-roy;
+
+  &__wrapper {
+    height: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $color-jungle-green;
+  }
+
+  &__item {
+    border: 1px solid $color-rob-roy;
+  }
+
+  td {
+    background-color: $color-burnt-siena;
+    text-align: right;
+  }
+}
+
+.div-table {
+  color: $color-blue-diane;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+  }
+
+  &__item {
+    background-color: $color-burnt-siena;
+    border-color: $color-blue-diane;
+    border-width: 1px;
+
+    &:nth-child(n + 5) {
+      color: $color-sandy-brown;
+      text-align: right;
+    }
+  }
+}
+
+.accordion {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 10px 25px;
+    color: $color-white;
+    font-size: 18px;
+    background-color: $color-blue-diane;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__panel {
+    max-height: 0;
+    padding: 0 10px;
+    transition: all 0.3s ease-out;
+    background-color: $color-rob-roy;
+
+    &.opened {
+      max-height: 100vh;
+      padding: 10px;
+    }
+  }
+}
